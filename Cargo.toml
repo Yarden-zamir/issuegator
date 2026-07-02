@@ -1,12 +1,17 @@
 [package]
 name = "issuegator"
-version.workspace = true
-edition.workspace = true
+version = "0.1.0"
+edition = "2021"
+description = "Rust TUI GitHub issue explorer for the current repository"
+license = "MIT"
+repository = "https://github.com/Yarden-zamir/issuegator"
+keywords = ["tui", "ratatui", "github", "issues", "cli"]
+categories = ["command-line-interface", "development-tools"]
 
 [dependencies]
-crossterm.workspace = true
-gator = { path = "../gator" }
-ratatui.workspace = true
-serde.workspace = true
-serde_json.workspace = true
-tui-input.workspace = true
+crossterm = "0.29"
+gator = { git = "https://github.com/Yarden-zamir/gator", tag = "v0.1.0" }
+ratatui = "0.30"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tui-input = { version = "0.15", features = ["crossterm"] }
