@@ -100,29 +100,29 @@ jobs:
           git checkout -B "$branch"
           mkdir -p Formula
           cat > "Formula/${BIN}.rb" <<RUBY
-# typed: false
-# frozen_string_literal: true
+          # typed: false
+          # frozen_string_literal: true
 
-class Issuegator < Formula
-  desc "Rust TUI GitHub issue explorer for the current repository"
-  homepage "https://github.com/Yarden-zamir/issuegator"
-  url "$url"
-  sha256 "$sha"
-  license "MIT"
-  head "https://github.com/Yarden-zamir/issuegator.git", branch: "main"
+          class Issuegator < Formula
+            desc "Rust TUI GitHub issue explorer for the current repository"
+            homepage "https://github.com/Yarden-zamir/issuegator"
+            url "$url"
+            sha256 "$sha"
+            license "MIT"
+            head "https://github.com/Yarden-zamir/issuegator.git", branch: "main"
 
-  depends_on "rust" => :build
-  depends_on "gh"
+            depends_on "rust" => :build
+            depends_on "gh"
 
-  def install
-    system "cargo", "install", *std_cargo_args
-  end
+            def install
+              system "cargo", "install", *std_cargo_args
+            end
 
-  test do
-    assert_predicate bin/"issuegator", :exist?
-  end
-end
-RUBY
+            test do
+              assert_predicate bin/"issuegator", :exist?
+            end
+          end
+          RUBY
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add "Formula/${BIN}.rb"
