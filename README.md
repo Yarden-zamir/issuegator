@@ -4,6 +4,8 @@ Rust TUI GitHub issue explorer for the current repository.
 
 ## Install
 
+Homebrew tap: https://github.com/Yarden-zamir/homebrew-tap
+
 ```sh
 brew install yarden-zamir/tap/issuegator
 ```
